@@ -1,0 +1,235 @@
+<html>
+<head>
+    <title>About us</title>
+
+        <style>
+            body{
+               
+                min-height: 100vh;
+                background: linear-gradient(to bottom right, #f7f1ea, #d6a77a); /* light to bronze */
+                color: #333;  
+                font-size: large;
+
+            }
+
+            .large-heading {
+                font-size: larger ;
+            }
+
+        .top-header {
+             display: flex;
+             align-items: center;     
+             justify-content: space-between; 
+            }
+
+        .logo {
+            max-width: 80px;
+            height: auto;     
+        }
+
+        .site-title{
+            font-size: 3rem;
+            font-family: "Georgia";
+            font-style: italic;
+            background: linear-gradient(90deg, #C49363, #6A3A1E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin: -10px;    
+        }
+
+
+
+    nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(90deg, #C49363, #6A3A1E); 
+            padding: 3px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: large;
+            border-radius: 12px; 
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: antiquewhite;
+            font-weight: bold;
+             padding: 4px 8px;
+            transition: color 0.3s;
+            font-size: 1.5rem;
+        }
+        nav ul li a:hover {
+            color: #FFD700;        
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0%;
+            height: 2px;
+            background-color: #FFD700;
+            transition: width 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Active link */
+        nav ul li a.active {
+            color: #FFD700; /* Same as hover */
+            pointer-events: none;
+            font-weight: bold;
+        }
+
+        figure {
+            margin: 20px auto;
+        }
+
+        figcaption {
+            font-size: 1rem;
+            margin-top: 8px;
+            font-style: italic;
+            color: #4a2c14;
+        }
+
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background: #C49363;
+            top: 100%;
+            left: 0;
+            min-width: 200px;
+            padding: 0;
+            margin: 0;
+            z-index: 1000;
+            border-radius: 5px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-menu li {
+            display: block;
+            padding: 10px;
+        }
+
+        .dropdown-menu li a {
+            color: antiquewhite;
+            display: block;
+            padding: 5px 10px;
+            text-decoration: none;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        footer {
+            background: linear-gradient(90deg, #C49363, #6A3A1E); 
+            color: antiquewhite;
+            padding: 9px;
+            text-align: center;
+            font-size: medium;
+            font-style: italic;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+            <img src="sematco.jpg" alt="Logo" class="logo">
+
+        <h1 class="site-title"><center>SEMATCO</center> </h1><br><br>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+    <a href="Core Services.html">Our Core Services</a>
+    <ul class="dropdown-menu">
+        <li><a href="Technical.html">Technical Department</a></li>
+        <li><a href="Projects & Drilling.html">Projects & Drilling Department</a></li>
+        <li><a href="Laboratory.html">Laboratory Department</a></li>
+        <li><a href="Surveying.html">Surveying Department</a></li>
+            </ul>
+        </li>
+     <li><a href="Clients.html">Clients</a></li>
+     <li><a href="Equipment.html">Equipments</a></li>
+     <li><a href="Location.html">Location</a></li>
+     <li class="contact-us"><a href="Contact us.html">Contact Us</a></li>
+     <li><a href="SEMATCO Job Application.html">Join Us</a></li>
+
+
+        </nav>
+    </header>
+
+    
+    <section id="Home" class="section">
+
+    <p><span class="large-heading"><strong>Our story began in 1995, as we realized a need in the market for a specialized company in the field of Geo-technical engineering services, consultation, third party inspection, and material testing. SEMATCO, Soil and Engineering Material Testing Co. W.L.L., is a specialized company for testing soil and building material both in-situ and in the laboratory.</strong></span></p>
+
+
+     <p><span class="large-heading"><strong>Our staff are highly capable, and some are B.Sc, M.Sc. and Ph.D holders in the field of Engineering with over 30 years of work experience. We have the capability of working on offshore and onshore soil investigations. Our laboratories are fully equipped with latest technology. Our equipment encompasses a fleet of 7 rigs equipped with automatic hammers, CPT, and VST. 
+     </strong></span></p>
+
+
+
+    <p><span class="large-heading"><strong>Vision:- </strong> To become Kuwait’s leading company providing geo-technical engineering and material testing services to the Kuwaiti construction market.</span></p>
+
+    <p><span class="large-heading"> <strong> Mission:-</strong> SEMATCO is committed to providing superior geo-technical engineering and material testing services to projects in Kuwait, through our highly competent staff and use of the latest technologies</p></span>
+
+    <p> <span class="large-heading"><strong> Values:-</strong>  Every project built in Kuwait starts with the data provided by companies like ours. The integrity of the information initially provided is crucial to the success of any project. We are committed to providing information that is:<br><br></span>
+    
+   <span class="large-heading"> <strong> Accurate :– </strong>SEMATCO has and is continuing to invest in laboratory equipment, drilling rigs, data processing equipment, engineering software packages, as well as highly trained personnel. We adhere to international standards and are ISO certified.<br><br></span>
+
+    <span class="large-heading"><strong> Timely :–</strong> We strive to provide the needed information in a timely manner.<br><br></span>
+
+    <span class="large-heading"><strong> Trustworthy :- </strong> SEMATCO seeks to create a relationship of trust by providing efficient, reliable testing, opinions, and solutions. To gain the satisfaction of our customers, and have their repeat business is our aim.<br>
+        <br></span></p>
+
+<div class="carousel -iteam">
+<figure style="text-align: center;">
+
+    <img src="Soil Analysis Process.jpg" style="width: 400px; height: auto; margin: 10px auto; display: block;" alt="Geotechnical Lab – Soil Analysis Process">
+            <figcaption>Geotechnical Lab – Soil Analysis Process</figcaption>
+
+</figure>
+</div>
+
+
+<div class="carousel -iteam" >
+<figure style="text-align: center;">
+    <img src="Triaxial Testing Apparatus.jpg" style="width: 400px; height: auto; margin: 10px auto; display: block;" alt="Triaxial Testing Apparatus">
+            <figcaption>Triaxial Testing Apparatus</figcaption>
+</figure>
+</div>
+
+    </section>
+
+<footer>
+
+        <p><strong>SEMATCO Co.</strong> | All Rights Reserved.</p>
+        <p>Tel: 24739466 – 24739465 -24739463</p>
+        <p>Address: Al-Rai , Block-1, Street-3, Plot-1760</p>
+        <p>Email: sematco@sematco.net</p>
+    </footer>    
+
+</body>
+    </html>

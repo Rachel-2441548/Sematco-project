@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Equipments</title>
+    <style>
+        body {
+            min-height: 100vh;
+            background: linear-gradient(to bottom right, #f7f1ea, #d6a77a);
+            color: #333;
+            font-size: large;
+        }
+
+        .large-heading {
+            font-size: larger;
+        }
+
+        .top-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            max-width: 80px;
+            height: auto;
+        }
+
+        .site-title {
+            font-size: 3rem;
+            font-family: "Georgia";
+            font-style: italic;
+            background: linear-gradient(90deg, #C49363, #6A3A1E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin: -10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(90deg, #C49363, #6A3A1E);
+            padding: 3px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: x-large;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: antiquewhite;
+            font-weight: bold;
+             padding: 4px 8px;
+            transition: color 0.3s;
+            font-size: 1.5rem;
+            border-radius: 12px; 
+        }
+
+        nav ul li a:hover {
+            color: #FFD700;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0%;
+            height: 2px;
+            background-color: #FFD700;
+            transition: width 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        nav ul li a.active {
+            color: #FFD700;
+            pointer-events: none;
+            font-weight: bold;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background: #C49363;
+            top: 100%;
+            left: 0;
+            min-width: 200px;
+            padding: 0;
+            margin: 0;
+            z-index: 1000;
+            border-radius: 5px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-menu li {
+            display: block;
+            padding: 10px;
+        }
+
+        .dropdown-menu li a {
+            color: antiquewhite;
+            display: block;
+            padding: 5px 10px;
+            text-decoration: none;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: #fff;
+        }
+
+        table, th, td {
+            border: 1px solid #444;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #C49363;
+            color: white;
+        }
+
+        footer {
+            background: linear-gradient(90deg, #C49363, #6A3A1E); 
+            color: antiquewhite;
+            padding: 9px;
+            text-align: center;
+            font-size: medium;
+            font-style: italic;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+  
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="sematco.jpg" alt="Logo" class="logo">
+        <h1 class="site-title"><center>SEMATCO</center></h1>
+        <br><br>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="Core Services.html">Our Core Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Technical.html">Technical Department</a></li>
+                        <li><a href="Projects & Drilling.html">Projects & Drilling Department</a></li>
+                        <li><a href="Laboratory.html">Laboratory Department</a></li>
+                        <li><a href="Surveying.html">Surveying Department</a></li>
+                    </ul>
+                </li>
+                <li><a href="Clients.html">Clients</a></li>
+                <li><a href="Equipment.html">Equipments</a></li>
+                <li><a href="Location.html">Location</a></li>
+                <li class="contact-us"><a href="Contact us.html">Contact Us</a></li>
+                <li><a href="SEMATCO Job Application.html">Join Us</a></li>
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Item Description</th>
+                <th>Specification/Standard</th>
+                <th>Serial Number</th>
+                <th>Manufacturer</th>
+                <th>Quantity</th>
+                <th>Included Accessories</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Digital Balance</td>
+                <td> 
+                  <span>2kg</span> <br>
+                  <span>30kg</span> <br>
+                  <span>24kg</span> <br>
+                  <span>150kg</span> <br>
+              </td>
+
+              <td>
+                  <span>GT 2100</span><br>
+                  <span>DB2</span><br>
+                  <span>101083</span><br>
+                  <span>R312P30</span><br>
+                  <span>206968</span><br>
+              </td>
+              <td>
+                  <span>ATCO</span> <br>
+                  <span>OHAUS</span> <br>
+                  <span>----</span> <br>
+                  <span>Ae Adam</span> <br>
+              </td>
+                      <td>10</td>
+                      <td>---</td>
+                  </tr>
+                  <tr>
+
+                <td>2</td>
+                <td>Ultrasonic Tester</td>
+                <td>ASTM C597 / BS 1881:203</td>
+
+                <td>
+                <span> 17000806</span> <br>
+                <span>9802N 102</span> <br>
+            </td>
+                <td>Control</td>
+                <td>4</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Rock Classification Hammer (Schmidt Hammer)</td>
+                <td>ASTM D5873 / ISRM</td>
+
+                <td>
+                  <span> 166742 </span> <br>
+                  <span>141823</span> <br>
+                </td>
+
+                <td>Proceq</td>
+                <td>5</td>
+                <td>---</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>Speedy Moisture Tester</td>
+                <td>
+                  <span> ASTM D4944 /</span> <br>
+                  <span> AASHTO T217 /</span> <br>
+                  <span> BS 6576</span> <br>
+                </td>
+
+                <td>
+                  <span>NA</span><br>
+                  <span>54404226</span> <br>
+                </td>
+
+                <td>Amphenol (U-K)</td>
+                <td>2</td>
+                <td>---</td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>Sand cone Apparatus</td>
+                <td>
+                  <span> ASTM D 1556 / </span> <br>
+                  <span> AASHTO T 191 </span> <br>
+                </td>
+
+                <td>NA</td>
+                <td>Control</td>
+                <td>6</td>
+
+                <td>
+                <span>Glass plate</span> <br>
+                <span> Spatula </span> <br>
+                <span>Rod Caliper 3mm</span> <br>
+                <span>porcelain dish</span> <br>
+                <span>Container</span> <br>
+              </td>
+            </tr>
+
+            <tr>
+              <td> 6 </td>
+               <td>Speedy Moisture Tester</td>
+               <td>----</td>
+               <td>---</td>
+               <td>----</td>
+               <td>
+                <span>5</span> <br>
+                <span>6</span> <br>
+                <span>6</span> <br>
+                <span>6</span> <br>
+               </td>
+               <td>---</td>
+             </tr>
+
+
+             <tr>
+              <td> 7 </td>
+               <td>Cylinder Mold</td>
+               <td>----</td>
+               <td>---</td>
+               <td>----</td>
+               <td>6</td>
+               <td>---</td>
+             </tr>
+
+             <tr>
+              <td> 8 </td>
+               <td>Cover Meter</td>
+               <td>---</td>
+               <td>
+                  <span>151160101</span> <br>
+                  <span>510410064</span> <br>
+               </td>
+               <td>
+                  <span> HILT</span><br>
+                  <span>Bosh,Germany</span> <br>
+                </td>
+
+               <td> 3 </td>
+               <td>---</td>
+               
+             </tr>
+
+
+             <tr>
+              <td> 9 </td>
+               <td>Automatic Compactor</td>
+               <td>
+                  <span>BS 1377</span> <br>
+                  <span>ASTM D</span> <br>
+                  <span>D</span> <br>
+               </td>
+               <td> K 335 </td>
+               <td>Dayton, Chicago</td>
+
+               <td> 2 </td>
+               <td>---</td>
+               
+             </tr>
+
+             <tr>
+              <td> 10 </td>
+               <td>Proctor</td>
+               <td>
+                  <span>ASTM D 558</span><br>
+                  <span>D559</span><br>
+                  <span> D 560</span><br>
+                  <span>D698/ AASHTO</span><br>
+
+               </td>
+               <td> NA</td>
+               <td>---</td>
+
+               <td> 
+                    <span> 1</span> <br>
+                    <span> 2</span> <br>
+                </td>
+               <td>---</td>
+               
+             </tr>
+
+             <tr>
+              <td> 11</td>
+               <td>CBR</td>
+               <td>
+                  <span>ASTM D 1883</span> <br>
+                  <span>AASHTO T 19</span> <br>
+               </td>
+
+               <td> 1125183 </td>
+               <td>Control</td>
+
+               <td> 
+                    <span> 1</span> <br>
+                    <span> 7</span> <br>
+                    <span> 2</span> <br>
+                    <span> 6</span> <br>
+                </td> 
+              
+              <td> Load ring 50KN</td>
+               
+               
+             </tr>
+
+             <tr>
+              <td> 12</td>
+               <td>In-Situ CBR test Set</td>
+               <td>
+                  <span>BS 1377:7</span> <br>
+                  <span>1924:2/ ASTM D 1883</span> <br>
+                  <span>D4429/ AASHTO T 193</span> <br>
+               </td>
+
+               <td> NA </td>
+               <td>Matest</td>
+
+               <td>1</td>
+              
+              <td>
+              <span>Mechanical Jack 50kN</span> <br>          
+              <span>Load Ring 40kN</span> <br>
+              <span>CBR penetration piston</span> <br>
+              <span>Adaptors and holders</span> <br>
+              <span> Datum bar</span> <br>
+            </td>
+             </tr>
+
+             <tr>
+              <td> 13</td>
+              <td>
+                <span>Core Drill Machine</span> <br>
+                <span>Core Bit</span> <br>
+              </td>
+
+              <td>NA</td>
+              <td>
+                <span>279257</span> <br>
+                <span>0002854</span> <br>
+                <span>214781</index.html
+                <span>NA</span> <br>
+              </td>
+
+              <td>
+                <span>NA</span> <br>
+                <span>Hilt</span> <br>
+                <span>NA</span> <br>
+              </td>
+
+              <td>
+                <span>4</span> <br>
+                <span>2</span> <br>
+                <span>2</span> <br>
+                <span>2</span> <br>
+                <span>2</span> <br>
+                <span>1</span> <br>
+              </td>
+
+              <td>
+                <span>Core machine Stand</span> <br>
+                <span>Core pit</span> <br>
+                <span>Water Pump</span> <br>
+              </td>
+              </tr>
+
+              <tr>
+              <td>14</td>
+              <td>Core Trimmer/Cut-off machine</td>
+              <td>---</td>
+              <td>99472</td>
+              <td>Controls,Italy</td>
+              <td>1</td>
+              <td>---</td>
+            </tr>
+
+            <tr>
+              <td>  
+                <span>15</span> <br>
+                <span>16</span> <br>
+              </td>
+              <td>Compression test machine</td>
+              <td>BS 1610/85</td>
+              <td>
+                <span>C 057-1-05</span> <br>
+                <span>NA</span> <br>
+              </td>
+
+              <td>
+                <span>Matest</span> <br>
+                <span>Controls</span> <br>
+              </td>
+
+              <td>2</td>
+
+              <td>
+                <span>Monitor</span> <br>
+                <span>Motor</span> <br>
+                <span>Battery back up device </span> <br>
+              </td>
+            </td>
+          </tr>
+
+          <tr>
+            <td>17</td>
+            <td>Slump Cone Test Set</td>
+            <td>ASTM C 143/BS</td>
+            <td>NA</td>
+            <td>NA</td>
+            <td>1</td>
+            <td>
+              <span>Slump Cone</span> <br>
+              <span> Tampering rod</span> <br>
+              <span> base </span> <br>
+          </tr>
+
+          <tr>
+            <td>18</td>
+            <td>Cylinder Capping machine (Sulphur method)</td>
+            <td> --- </td>
+            <td>14601379 </td>
+            <td> Controls </td>
+            <td> 1 </td>
+            <td>----</td>
+          </tr>
+
+          <tr>
+            <td>19</td>
+            <td>Crack detection microscope</td>
+            <td>WF 10 X, 18mm</td>
+            <td>NA</td>
+            <td>NA</td>
+            <td>1</td>
+            <td>---</td>
+          </tr>
+
+          <tr>
+            <td>20</td>
+            <td>Hydraulic Jack</td>
+            <td>---</td>
+            <td>NA</td>
+            <td>Enerpac</td>
+            <td>1</td>
+            <td>---</td>
+          </tr>
+
+          <tr>
+            <td>21</td>
+            <td>Pressure Guage</td>
+            <td>---</td>
+            <td>NA</td>
+            <td>Enerpac</td>
+            <td>1</td>
+            <td>---</td>
+          </tr>
+
+         <tr>
+            <td>22</td>
+            <td>Flakiness guage</td>
+            <td>BS 812</td>
+            <td>NA</td>
+            <td>Enerpac</td>
+            <td>1</td>
+            <td>---</td>
+          </tr>
+<tr>
+            <td>23</td>
+            <td>Length guage</td>
+            <td>BS 812</td>
+            <td>NA</td>
+            <td>Enerpac</td>
+            <td>1</td>
+            <td>---</td>
+          </tr>
+
+<tr>
+            <td>24</td>
+            <td>Aggregate Impact test machine </td>
+            <td>BS 812</td>
+            <td>3010521</td>
+            <td>Controls</td>
+            <td>1</td>
+            <td> Hammer (dia-100mm)</td>
+          </tr>
+
+<tr>
+            <td>25</td>
+            <td>Reflux Extractor 1000g capacity glass</td>
+            <td>ASTM D2172/AASHTO TI 64</td>
+            <td>NA</td>
+            <td>Matest</td>
+            <td>1</td>
+            <td>Hot Plate dia 220mm, 230V</td>
+          </tr>
+<tr>
+            <td>26</td>
+            <td>Curing tank</td>
+            <td>---</td>
+            <td>---</td>
+            <td>---</td>
+            <td>1</td>
+            <td>---</td>
+          </tr>
+
+        </tbody>
+    </table>
+
+     <footer>
+
+        <p><strong>SEMATCO Co.</strong> | All Rights Reserved.</p>
+        <p>Tel: 24739466 – 24739465 -24739463 </p>
+        <p>Address: Al-Rai , Block-1, Street-3, Plot-1760</p>
+        <p>Email: sematco@sematco.net</p>
+
+    </footer>   
+
+</body>
+</html>
+

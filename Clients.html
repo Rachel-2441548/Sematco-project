@@ -1,0 +1,563 @@
+<html>
+<head>
+    <title>Clients</title>
+
+        <style>
+
+            h1 {
+                text-align: center;
+                font-size: 2.5rem;
+                font-family: 'Georgia', serif;
+                color: #6A3A1E;
+                margin-top: 40px;
+                margin-bottom: 20px;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            }
+
+            body{
+               
+                min-height: 100vh;
+                background: linear-gradient(to bottom right, #f7f1ea, #d6a77a); /* light to bronze */
+                color: #333;  
+                font-size: large;
+
+            }
+
+            .large-heading {
+                font-size: larger ;
+            }
+
+            .top-header {
+                 display: flex;
+                 align-items: center;     
+                 justify-content: space-between; 
+                }
+
+            .logo {
+                max-width: 80px;
+                height: auto;     
+            }
+
+            .site-title{
+                font-size: 3rem;
+                font-family: "Georgia";
+                font-style: italic;
+                background: linear-gradient(90deg, #C49363, #6A3A1E);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-align: center;
+                margin: -10px;    
+            }
+
+            nav {
+                    display: flex;
+                    justify-content: center;
+                    gap: 10px;
+                    background: linear-gradient(90deg, #C49363, #6A3A1E); 
+                    padding: 3px;
+                    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+                    font-size: x-large;
+                    border-radius: 12px; 
+                }
+
+            nav ul {
+                    list-style: none;
+                    display: flex;
+                    gap: 20px;
+                }
+
+            nav ul li {
+                    position: relative;
+                }
+            nav ul li a {
+                    text-decoration: none;
+                    color: antiquewhite;
+                    font-weight: bold;
+                     padding: 4px 8px;
+                    transition: color 0.3s;
+                    font-size: 1.5rem;
+                }
+
+            nav ul li a:hover {
+                    color: #FFD700;        
+                }
+
+            nav ul li a::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: -3px;
+                    width: 0%;
+                    height: 2px;
+                    background-color: #FFD700;
+                    transition: width 0.3s ease-in-out;
+                }
+
+            nav ul li a:hover::after {
+                    width: 100%;
+                }
+
+                /* Active link */
+            nav ul li a.active {
+                    color: #FFD700; /* Same as hover */
+                    pointer-events: none;
+                    font-weight: bold;
+                }
+
+        /* Dropdown styles */
+            .dropdown {
+                    position: relative;
+                }
+
+            .dropdown-menu {
+                    display: none;
+                    position: absolute;
+                    background: #C49363;
+                    top: 100%;
+                    left: 0;
+                    min-width: 200px;
+                    padding: 0;
+                    margin: 0;
+                    z-index: 1000;
+                    border-radius: 5px;
+                    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+                }
+
+            .dropdown-menu li {
+                    display: block;
+                    padding: 10px;
+                }
+
+            .dropdown-menu li a {
+                    color: antiquewhite;
+                    display: block;
+                    padding: 5px 10px;
+                    text-decoration: none;
+                }
+
+            .dropdown:hover .dropdown-menu {
+                    display: block;
+                }
+
+            .gallery-container {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(140px, 4fr)); /* more responsive */
+                    gap: 20px;
+                    padding: 20px;
+                    max-width: 1000px;
+                    margin: auto;
+                }
+
+            .gallery-item {
+                    background-color: #fff;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    transition: transform 0.3s ease;
+                    padding: 10px;
+                }
+
+            .gallery-item:hover {
+                    transform: scale(1.03);
+                }
+
+            .gallery-item img {
+                    width: 100%;
+                    height: 100px; /* reduce height */
+                    object-fit: contain; /* make sure logos look good */
+                    display: block;
+                }
+
+            .lightbox {
+                    display: none;
+                    position: fixed;
+                    inset: 0;
+                    background-color: rgba(0, 0, 0, 0.8);
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    z-index: 9999;
+                    padding: 30px;
+                    box-sizing: border-box;
+                }
+
+            .lightbox img {
+                    max-width: 90%;
+                    max-height: 70vh;
+                    border-radius: 10px;
+                    box-shadow: 0 0 10px #000;
+                }
+
+            .description {
+                    color: #fff;
+                    font-size: 1.3rem;
+                    margin-top: 20px;
+                    text-align: center;
+                    max-width: 80%;
+                    line-height: 1.6;
+                }
+
+                footer {
+                    background: linear-gradient(90deg, #C49363, #6A3A1E); 
+                    color: antiquewhite;
+                    padding: 9px;
+                    text-align: center;
+                    font-size: medium;
+                    font-style: italic;
+                    font-weight: bold;
+                    border-radius: 8px;
+                }
+
+
+
+</style>
+
+                
+
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+            <img src="sematco.jpg" alt="Logo" class="logo">
+
+        <h1>Our Esteemed Clients</h1>
+        <nav>
+            <ul>
+                <li><a href="Home page.html">Home</a></li>
+                <li class="dropdown">
+    <a href="Core Services.html">Our Core Services</a>
+    <ul class="dropdown-menu">
+        <li><a href="Technical.html">Technical Department</a></li>
+        <li><a href="Projects & Drilling.html">Projects & Drilling Department</a></li>
+        <li><a href="Laboratory.html">Laboratory Department</a></li>
+        <li><a href="Surveying.html">Surveying Department</a></li>
+
+    </ul>
+</li>
+                <li><a href="Clients.html">Clients</a></li>
+                <li><a href="Equipment.html">Equipments</a></li>
+                <li><a href="Location.html">Location</a></li>
+                <li class="contact-us"><a href="Contact us.html">Contact Us</a></li>
+                <li><a href="SEMATCO Job Application.html">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<h1>Our Esteemed Clients</h1>
+
+  <div class="gallery-container">
+    <div class="gallery-item">
+      <img src="ministry of defense logo.jpg" alt="Ministry of Defense" data-description="Ministry of Defense  is responsible for safeguarding the security and defense of Kuwait. It oversees the development and modernization of the country’s military forces, defense infrastructure, and strategic defense initiatives. The Ministry ensures that Kuwait's defense capabilities remain strong, protecting the sovereignty and security of the nation."onclick="openLightbox(this)">
+</div>
+    
+    <div class="gallery-item">
+      <img src="Kuwait Ministry of Defense Engineering Corps Logo.jpg" alt="Kuwait Ministries" data-description="Ministry of Defense Engineering Corps is a specialized division that handles all engineering and construction-related services for military infrastructure. The Corps is responsible for designing, building, and maintaining Kuwait’s military bases, defense systems, and installations, ensuring their efficiency and functionality in national defense."onclick="openLightbox(this)">
+</div>
+
+    
+    <div class="gallery-item">
+      <img src="kuwait ministries .jpg" data-description="The various ministries in Kuwait play a pivotal role in shaping the country’s governance and national development. These ministries coordinate and manage sectors such as civil planning, environmental sustainability, public service reform, and infrastructure development. Through strategic collaboration, they work to ensure long-term growth and prosperity for the nation."onclick="openLightbox(this)">
+    </div>
+
+    <div class="gallery-item">
+      <img src="kcpc.jpeg"  alt="KCPC" data-description="KCPC is a leading construction and project management company in Kuwait. Known for delivering large-scale projects across diverse sectors, including residential, commercial, and government buildings, KCPC’s focus is on quality, safety, and innovation. The company’s extensive experience in managing complex projects ensures it remains a key player in Kuwait’s infrastructure development."onclick="openLightbox(this)">
+    </div>
+
+    <div class="gallery-item">
+      <img src="ssc.jpg"alt="SSC" 
+       data-description="SSC (Surveying Services Center) provides critical surveying and geotechnical services that are integral to the planning and execution of major infrastructure projects in Kuwait. Offering advanced spatial data analysis and land surveying solutions, SSC’s expertise supports various industries, helping to ensure that projects are completed with precision and meet regulatory standards."onclick="openLightbox(this)">
+    </div>
+
+
+    <div class="gallery-item">
+      <img src="imco.jpg" alt="IMCO" 
+       data-description="IMCO is a renowned provider of integrated engineering, procurement, and construction (EPC) services in Kuwait. The company specializes in delivering complex projects within the oil, gas, defense, and infrastructure sectors. Known for its technical expertise and ability to tackle challenging projects, IMCO is a key player in shaping Kuwait's industrial landscape."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="wsp.jpeg" alt="WSP" 
+       data-description="WSP is a global leader in engineering consultancy, offering innovative solutions in urban planning, sustainability, and infrastructure development. The company provides services that support Kuwait’s ongoing growth by integrating sustainable practices into city planning, infrastructure projects, and environmental solutions, ensuring the development of resilient and future-ready urban spaces."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="Kuwait oxgen.jpg"alt="Kuwait Oxygen" 
+       data-description="Kuwait Oxygen is a leading provider of industrial and medical gases in Kuwait. The company plays an essential role in various sectors, including healthcare, manufacturing, and energy. By supplying high-quality gases for industrial applications and medical use, Kuwait Oxygen supports key industries and healthcare facilities in the region, ensuring operational efficiency and safety."onclick="openLightbox(this)">
+</div>
+    
+
+<div class="gallery-item">
+      <img src="MEW.jpg"alt="Ministry of Electricity and Water" 
+       data-description="Ministry of Electricity & Water responsible for the provision of reliable utility services across Kuwait. It plays a key role in managing and maintaining the nation’s electrical power and water supply infrastructure. The Ministry ensures the sustainability and efficient distribution of these essential resources, providing critical support for both residential and industrial needs"onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="projacs.jpeg"alt="Projacs International" 
+       data-description="Projacs is a leading project management and construction consultancy firm in the Middle East. With years of experience, Projacs provides comprehensive services across various sectors including commercial, residential, and infrastructure projects. The company is known for its commitment to quality, ensuring successful project delivery through effective planning and expert project management."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="Al Kharafi co..jpeg"alt="Al Kharafi Co." 
+       data-description="Al Kharafi Co. is one of Kuwait's most reputable construction and contracting firms, with a rich history of delivering large-scale infrastructure and civil engineering projects. The company is recognized for its expertise in complex construction processes, providing high-quality services in sectors like residential, commercial, and industrial developments." onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="khalid and brothers.jpg"alt="Khalid and Brothers" 
+       data-description="Khalid and Brothers is a well-established construction company in Kuwait, specializing in large-scale projects. Known for its significant contributions to Kuwait’s infrastructure, the company offers high-level expertise in construction management, ensuring projects are completed with precision, safety, and quality control." onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="Sadeer General trading and contracting company.jpeg"alt="Sadeer General Trading and Contracting" data-description="Sadeer General Trading and Contracting is a key player in the construction and engineering sectors of Kuwait. The company specializes in providing top-notch services across various construction phases, including design, procurement, and project management. With a focus on excellence, Sadeer supports a wide range of projects, ensuring the timely delivery of high-quality results." onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="NAB.jpg"alt="NAB" 
+       data-description="NAB is a specialist in engineering and infrastructure development across Kuwait. The company provides services related to the construction of roads, bridges, and urban developments. With expertise in various engineering fields, NAB contributes to the modernization and expansion of Kuwait's infrastructure, ensuring sustainable and innovative development"
+       onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="EQUATE.jpeg"alt="EQUATE" 
+       data-description="EQUATE is a leading petrochemical company in the region, recognized for its critical role in the production of chemicals that serve industries worldwide. The company contributes significantly to Kuwait's industrial growth by delivering high-quality products used in manufacturing, agriculture, and everyday goods. EQUATE’s innovation and sustainable practices drive the economy and support diverse industries in the Middle East."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="Alghanim Automotive.jpeg" alt="Alghanim Automotive" data-description="Alghanim Automotive is one of the most recognized names in the automotive industry in Kuwait, offering a broad range of services from vehicle sales to after-sales maintenance. The company is known for its focus on customer satisfaction, cutting-edge innovation, and a strong partnership with leading global automotive brands, making it a leader in Kuwait’s automotive market."onclick="openLightbox(this)">    
+</div>
+
+<div class="gallery-item">
+      <img src="combined group.jpeg"alt="Combined Group" 
+       data-description="Combined Group is one of the most prominent contractors in Kuwait, specializing in civil construction, infrastructure, and mechanical works. The company is recognized for its expertise in delivering large-scale projects on time and within budget. With a portfolio that spans industrial, residential, and government projects, Combined Group is at the forefront of shaping Kuwait's modern infrastructure."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="KAC.jpeg"alt="Kuwait Airways (KAC)" 
+       data-description="Kuwait Airways is the national airline of Kuwait, is a symbol of the country’s connectivity to the world. The airline offers domestic and international flights and is supported by engineering consultation services for aircraft maintenance, operations, and fleet management. With a legacy of excellence, Kuwait Airways remains a vital player in the aviation industry."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="KCC.jpeg"alt="Kuwait Controls Company (KCC)" 
+       data-description="Kuwait Controls Company (KCC) is an expert in industrial automation, control systems, and integrated solutions. The company provides advanced technology for managing and controlling complex processes across industries such as oil, gas, and manufacturing. KCC’s innovative solutions ensure that industrial operations are efficient, reliable, and secure"onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="Gulf Cypro.jpeg"alt="Gulf Cypro" 
+       data-description="Gulf Cypro – It is a leading engineering consultancy specializing in water treatment and environmental systems. The company’s expertise in designing and implementing sustainable water management solutions plays a critical role in improving water quality and conserving resources. Gulf Cypro’s services contribute to the development of eco-friendly infrastructures that protect the environment."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="Al-jazera consult.jpg"alt="Al-Jazera Consult" 
+       data-description="Al-Jazera Consult is a trusted provider of architectural, engineering, and design consultancy services. The company offers innovative solutions for various projects, including residential, commercial, and industrial developments. Known for its commitment to quality and attention to detail, Al-Jazera Consult delivers exceptional value in every project it undertakes."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="MSEC.jpg"alt="MSEC" 
+       data-description="MSEC is a multidisciplinary firm providing project management and consulting services to a wide range of industries. The company’s expertise spans across construction, engineering, and IT solutions. MSEC’s strong track record of managing complex projects ensures efficient execution, cost-effective solutions, and successful project outcomes."onclick="openLightbox(this)">
+    </div>
+
+    <div class="gallery-item">
+      <img src="Al mousawi.jpg"alt="Al Mousawi" 
+       data-description="Al Mousawi is a well-established construction and trading company in Kuwait, known for its diverse project portfolio spanning various sectors. The company specializes in delivering quality construction services and providing solutions for large-scale infrastructure projects. With a focus on excellence, Al Mousawi has built a strong reputation in the industry."onclick="openLightbox(this)">
+    </div>
+
+    <div class="gallery-item">
+      <img src="CANAR.jpg"alt="CANAR" 
+       data-description="CANAR is a leading provider of telecommunications and IT infrastructure solutions in Kuwait. The company specializes in offering cutting-edge services in network infrastructure, fiber optics, and IT system integration. CANAR’s expertise is essential in supporting the communication and technology needs of both private and public sectors in Kuwait."onclick="openLightbox(this)">
+    </div>
+
+    <div class="gallery-item">
+      <img src="La'ala.jpg"alt="La'ala" 
+       data-description="La'ala plays a key role in driving sustainable urban development in Kuwait. The company focuses on delivering innovative solutions for residential, commercial, and mixed-use projects. With a commitment to environmental sustainability and urban renewal, La'ala contributes to the modernization and growth of Kuwait’s urban landscapes."onclick="openLightbox(this)">
+    </div>
+
+    <div class="gallery-item">
+      <img src="Osama.jpg"alt="Osama" 
+       data-description="Osama is a prominent partner in civil construction and infrastructure consulting in Kuwait. The company is involved in various large-scale projects, offering expert consulting services in planning, design, and project management. Osama’s expertise ensures that infrastructure projects are completed efficiently and meet the highest standards of quality."onclick="openLightbox(this)">
+    </div>
+
+    <div class="gallery-item">
+      <img src="Kuwait United.jpg"alt="Kuwait United" 
+       data-description="Kuwait United is a company engaged in providing engineering solutions for large-scale development projects across Kuwait. Specializing in civil engineering, structural design, and construction management, Kuwait United delivers integrated solutions to meet the growing demands of infrastructure development and urban expansion in the country."onclick="openLightbox(this)">
+    </div>
+
+    <div class="gallery-item">
+      <img src="Housing Welfare.jpeg"alt="Public Authority for Housing Welfare" 
+       data-description="Public Authority for Housing Welfare plays a critical role in the development and management of national housing projects in Kuwait. It works to ensure the provision of affordable housing to citizens, facilitating urban development and contributing to the social well-being of the population through the creation of quality residential areas."onclick="openLightbox(this)">
+    </div>
+
+    <div class="gallery-item">
+      <img src="KUCM.jpg" alt="KUCM(Kuwait University Construction Management)" 
+       data-description="KUCM(Kuwait University Construction Management)  is renowned for its significant contributions to urban construction management in Kuwait. The organization specializes in overseeing large-scale construction projects, ensuring that they meet all regulatory standards and are completed on time and within budget. KUCM’s expertise plays a key role in the successful delivery of major infrastructure projects. "onclick="openLightbox(this)">
+    </div>
+
+    <div class="gallery-item">
+      <img src="Kuwait technical consulting.jpg"alt="Kuwait Technical Consulting" 
+       data-description="Kuwait Technical Consulting offers expert technical and engineering solutions, serving a wide range of industries including construction, oil and gas, and infrastructure. The company provides innovative consulting services to clients, offering tailored solutions that address complex engineering challenges and promote efficient project execution.
+
+"onclick="openLightbox(this)">
+    </div>
+
+    <div class="gallery-item">
+      <img src="BURAN.jpg"alt="BURAN" 
+       data-description="BURAN is a leading contractor specializing in industrial and commercial projects in Kuwait. Known for its high-quality construction services, the company focuses on delivering specialized infrastructure solutions for large-scale industrial plants, commercial buildings, and other complex facilities. BURAN’s expertise ensures that projects are completed to the highest standards of safety and efficiency."onclick="openLightbox(this)">
+    </div>
+
+    <div class="gallery-item">
+      <img src="Mouchel.jpeg"alt="Mouchel" 
+       data-description="Mouchel is an international consultancy firm with extensive experience in infrastructure and transport projects across the globe. With a strong focus on sustainable development, the company provides design, engineering, and project management services that help build and enhance transportation networks, urban infrastructure, and utility systems."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="AUM.jpeg" alt="American University of the Middle East (AUM)" 
+       data-description="AUM (The American University of the Middle East) is committed to advancing academic excellence in Kuwait. The university collaborates on infrastructure development to enhance its campus, offering state-of-the-art facilities and creating a conducive environment for learning and research. AUM is an important player in the educational landscape of Kuwait."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="Sabah sea city.jpg" alt="Sabah Al Ahmad Sea City" 
+       data-description="Sabah Al Ahmad Sea City is a prestigious coastal urban development project that serves as a model for modern city planning and sustainable living. The project features integrated residential, commercial, and recreational spaces, making it one of the most prominent waterfront developments in Kuwait."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="First United.jpeg"alt="First United" 
+       data-description="First United is a leading provider of high-quality civil and environmental engineering services. The company is known for its expertise in executing large-scale infrastructure projects, focusing on environmental sustainability and innovative solutions to meet the growing demands of urban development."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="Sadeem.jpg"alt="Sadeem" 
+       data-description="Sadeem delivers cutting-edge infrastructure and utility solutions, specializing in water management, stormwater drainage systems, and environmental services. Their work plays a crucial role in enhancing the resilience of urban infrastructure and supporting sustainable city planning."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="Nouri.jpeg"alt="Nouri" 
+       data-description="Nouri is a trusted partner in the construction industry, providing high-quality building materials and construction support. The company is known for its reliable products and services, helping construction firms meet their project requirements with top-grade materials and expertise."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="Marafie.jpeg" alt="Marafie Group" 
+       data-description="Marafie Group is a diversified conglomerate with a strong presence in engineering and contracting services. The company provides comprehensive solutions across various sectors, including construction, manufacturing, and industrial services, making it a key player in Kuwait’s development landscape"onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="Alghanim International.jpeg" alt="Alghanim International" 
+       data-description="Alghanim International is a major player in infrastructure and energy projects, specializing in delivering large-scale construction and engineering solutions. The company is involved in both local and international projects, with a focus on enhancing Kuwait’s energy and infrastructure capabilities."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="Soor.jpg"alt="Soor Engineering Bureau" 
+       data-description="Soor Engineering Bureau is a highly regarded consultancy firm providing expert engineering and design services. Their innovative solutions support clients in a variety of sectors, including construction, industrial projects, and infrastructure development, ensuring efficiency and quality in every project."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="KNPC .jpg"alt="Kuwait National Petroleum Company (KNPC)" 
+       data-description="KNPC is Kuwait’s leading petroleum refining and gas processing organization, playing a central role in the country’s oil and gas industry. KNPC specializes in the refining, processing, and distribution of petroleum products, serving both domestic and international markets."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="SQC.jpeg"alt="SQC International" 
+       data-description="SQC International is a specialist in quality control and engineering consulting services. The company provides advanced solutions for ensuring the integrity and safety of construction projects, focusing on high standards in quality assurance and engineering performance."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="Hilal Cement Company.jpg"alt="Hilal Cement Company" 
+       data-description="Hilal Cement is one of Kuwait’s largest suppliers of cement and construction materials. The company is known for its high-quality products that support the construction and infrastructure industries, playing a vital role in building the nation’s urban landscape."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="SK.jpg"alt="SK Engineering & Construction" alt="SK Engineering & Construction"data-description="SK is a global leader in EPC (Engineering, Procurement, and Construction) projects. It plays a significant role in Kuwait’s energy and infrastructure sectors through international partnerships and large-scale developments."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="Dar AL Dowallah.jpeg"alt="Dar Al Dowallah" data-description="Dar Al Dowallah is a multidisciplinary engineering consultancy firm known for its involvement in civil infrastructure and development planning. It supports a range of public and private sector projects in urban design and construction."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="Gulf Dredging.jpg"alt="Gulf Dredging and General Contracting Company" data-description="Gulf Dredging specializes in marine engineering, port construction, and dredging operations. The company is integral to Kuwait’s coastal and harbor development, enhancing maritime infrastructure and land reclamation."onclick="openLightbox(this)">
+    </div>
+
+
+<div class="gallery-item">
+      <img src="KSCC.jpg"alt="KSCC" 
+       data-description="KSCC is a leading construction contractor offering comprehensive services across civil engineering and building works. Its contributions include residential, commercial, and public sector infrastructure throughout Kuwait."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="SHBC.jpeg"alt="SHBC" 
+       data-description="SHBCis renowned for its large-scale projects in housing, road construction, and government infrastructure. It plays a critical role in Kuwait’s urban expansion and public works development."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="ACO.jpg"alt="ACO" 
+       data-description="ACO develops advanced drainage, stormwater management, and water treatment systems. Their technology supports Kuwait’s infrastructure by enhancing sustainability and flood prevention capabilities."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="Kuwait Arab Contractors.jpeg"alt="Kuwait Arab Contractors" 
+       data-description="Kuwait Arab Contractorsengages in major civil, industrial, and infrastructure projects. The company is known for delivering quality construction solutions and supporting national development goals."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="Touristic Enterprises.jpeg" alt="Touristic Enterprises Company" 
+       data-description="Touristic Enterprises manages Kuwait’s tourism infrastructure including resorts, recreational facilities, and cultural venues. Its mission is to enhance leisure experiences and support economic diversification.">
+    </div>
+
+<div class="gallery-item">
+      <img src="Kuwait oil company.jpg" alt="Kuwait Oil Company" 
+       data-description="Kuwait Oil Company leads Kuwait’s oil exploration, drilling, and production efforts, supplying the global energy market. The company supports strategic initiatives in hydrocarbon development and national economic growth."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="KEO.jpg">
+    </div>
+
+<div class="gallery-item">
+      <img src="The central agency for Information Technology.jpg" alt="KEO International Consultants" data-description="KEO is a globally recognized firm offering architectural, engineering, and urban planning services. It contributes to iconic projects in Kuwait with innovative design and sustainable practices."onclick="openLightbox(this)">
+    </div>
+
+
+<div class="gallery-item">
+      <img src="Kuwait Petroleum Corporation.jpg"alt="Kuwait Petroleum Corporation"data-description="Kuwait Petroleum Corporationoversees Kuwait’s petroleum industry, managing upstream and downstream operations. As a national oil entity, it drives strategic investments in energy infrastructure and international partnerships."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="gulf consult.jpg"alt="Gulf Consult" 
+       data-description="Gulf Consult is one of Kuwait’s premier architectural and engineering firms. It provides comprehensive consultancy services for infrastructure, education, healthcare, and commercial development projects."onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="ministry of education .jpg"alt="Ministry of Education – Kuwait" 
+       data-description="The Ministry of Education plays a key role in shaping Kuwait’s academic landscape. It collaborates on the construction and modernization of schools, universities, and educational support facilities."onclick="openLightbox(this)">
+    </div>
+
+
+<div class="gallery-item">
+      <img src="ministry of public works.jpeg"alt="Ministry of Public Works – Kuwait" 
+       data-description="The Ministry of Public Works is responsible for developing Kuwait’s public infrastructure. It oversees projects in roads, government buildings, sanitation systems, and national facilities." onclick="openLightbox(this)">
+    </div>
+
+<div class="gallery-item">
+      <img src="Ministry of Interior – Kuwait.jpeg"alt="Ministry of Interior – Kuwait" data-description="The Ministry of Interior supports the nation’s internal security through infrastructure planning. It is involved in the construction of police stations, border facilities, and secure administrative buildings."onclick="openLightbox(this)">
+    </div>
+
+</div>
+
+ <div id="lightbox" class="lightbox">
+        <img id="lightbox-image" src="" alt="">
+        <div id="lightbox-description" class="description"></div>
+    </div>
+
+
+<script src="lightbox.js"></script>
+
+ <footer>
+
+        <p><strong>SEMATCO Co.</strong> | All Rights Reserved.</p>
+        <p>Tel: 24739466 – 24739465 -24739463 </p>
+        <p>Address: Al-Rai , Block-1, Street-3, Plot-1760</p>
+        <p>Email: sematco@sematco.net</p>
+
+    </footer>   
+
+</body>
+    </html>

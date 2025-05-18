@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Location</title>
+    <style>
+        /* ✅ Your CSS remains unchanged – you can keep it here or move it to a separate CSS file if needed */
+        body {
+            min-height: 100vh;
+            background: linear-gradient(to bottom right, #f7f1ea, #d6a77a);
+            color: #333;
+            font-size: large;
+        }
+
+        .large-heading {
+            font-size: larger;
+        }
+
+        .top-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            max-width: 80px;
+            height: auto;
+        }
+
+        .site-title {
+            font-size: 3rem;
+            font-family: "Georgia";
+            font-style: italic;
+            background: linear-gradient(90deg, #C49363, #6A3A1E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin: -10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(90deg, #C49363, #6A3A1E);
+            padding: 3px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: large;
+            border-radius: 12px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: antiquewhite;
+            font-weight: bold;
+            padding: 4px 8px;
+            transition: color 0.3s;
+            font-size: 1.5rem;
+        }
+
+        nav ul li a:hover {
+            color: #FFD700;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0%;
+            height: 2px;
+            background-color: #FFD700;
+            transition: width 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        nav ul li a.active {
+            color: #FFD700;
+            pointer-events: none;
+            font-weight: bold;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background: #C49363;
+            top: 100%;
+            left: 0;
+            min-width: 200px;
+            padding: 0;
+            margin: 0;
+            z-index: 1000;
+            border-radius: 5px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-menu li {
+            display: block;
+            padding: 10px;
+        }
+
+        .dropdown-menu li a {
+            color: antiquewhite;
+            display: block;
+            padding: 5px 10px;
+            text-decoration: none;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 15px 0 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            color: #003366;
+            font-size: xx-large;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #4a90e2;
+        }
+
+        .location-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            background-color: #4a90e2;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .location-btn:hover {
+            background-color: #4178be;
+            transform: scale(1.05);
+        }
+
+        #locationResult {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        footer {
+             background: linear-gradient(90deg, #C49363, #6A3A1E); 
+            color: antiquewhite;
+            padding: 9px;
+            text-align: center;
+            font-size: medium;
+            font-style: italic;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="sematco.jpg" alt="Logo" class="logo">
+        <h1 class="site-title"><center>SEMATCO</center></h1>
+        <br><br>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="Core Services.html">Our Core Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Technical.html">Technical Department</a></li>
+                        <li><a href="Projects & Drilling.html">Projects & Drilling Department</a></li>
+                        <li><a href="Laboratory.html">Laboratory Department</a></li>
+                        <li><a href="Surveying.html">Surveying Department</a></li>
+                    </ul>
+                </li>
+                <li><a href="Clients.html">Clients</a></li>
+                <li><a href="Equipment.html">Equipments</a></li>
+                <li><a href="Location.html">Location</a></li>
+                <li class="contact-us"><a href="Contact us.html">Contact Us</a></li>
+                <li><a href="SEMATCO Job Application.html">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <hr>
+    <h2><b>Location</b></h2>
+    <p><b>Click the link to view the location on Google Maps:</b></p>
+    <a href="https://maps.app.goo.gl/fovDjkQkCFbqvHag7" target="_blank">Sematco</a>
+
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d66105.27108319814!2d47.93105800000001!3d29.305080999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf9a8551d720a5%3A0xc402c5631762e0bc!2sSematco%20Co.!5e1!3m2!1sen!2skw!4v1747036875408!5m2!1sen!2skw" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <br>
+
+    <button class="location-btn" onclick="getLocation()">📍 Check Distance from SEMATCO</button>
+    <div id="locationResult"></div>
+
+    <script src="Location.js"></script>
+
+     <footer>
+
+        <p><strong>SEMATCO Co.</strong> | All Rights Reserved.</p>
+        <p>Tel: 24739466 – 24739465 -24739463 </p>
+        <p>Address: Al-Rai , Block-1, Street-3, Plot-1760</p>
+        <p>Email: sematco@sematco.net</p>
+
+    </footer>   
+
+</body>
+</html>
+

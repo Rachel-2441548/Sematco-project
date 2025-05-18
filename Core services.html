@@ -1,0 +1,218 @@
+<html>
+<head>
+    <title>Core Services</title>
+
+        <style>
+            body{
+               
+                min-height: 100vh;
+                background: linear-gradient(to bottom right, #f7f1ea, #d6a77a); /* light to bronze */
+                color: #333;  
+                font-size: large;
+
+            }
+
+            .large-heading {
+                font-size: larger ;
+            }
+
+        .top-header {
+             display: flex;
+             align-items: center;     
+             justify-content: space-between; 
+            }
+
+        .logo {
+            max-width: 80px;
+            height: auto;     
+        }
+
+        .site-title{
+            font-size: 3rem;
+            font-family: "Georgia";
+            font-style: italic;
+            background: linear-gradient(90deg, #C49363, #6A3A1E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin: -10px;    
+        }
+
+
+
+    nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(90deg, #C49363, #6A3A1E); 
+            padding: 3px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: x-large;
+            border-radius: 12px; 
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: antiquewhite;
+            font-weight: bold;
+             padding: 4px 8px;
+            transition: color 0.3s;
+            font-size: 1.5rem;
+        }
+
+        nav ul li a:hover {
+            color: #FFD700;        
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0%;
+            height: 2px;
+            background-color: #FFD700;
+            transition: width 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Active link */
+        nav ul li a.active {
+            color: #FFD700; /* Same as hover */
+            pointer-events: none;
+            font-weight: bold;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background: #C49363;
+            top: 100%;
+            left: 0;
+            min-width: 200px;
+            padding: 0;
+            margin: 0;
+            z-index: 1000;
+            border-radius: 5px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-menu li {
+            display: block;
+            padding: 10px;
+        }
+
+        .dropdown-menu li a {
+            color: antiquewhite;
+            display: block;
+            padding: 5px 10px;
+            text-decoration: none;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        footer {
+            background: linear-gradient(90deg, #C49363, #6A3A1E); 
+            color: antiquewhite;
+            padding: 9px;
+            text-align: center;
+            font-size: medium;
+            font-style: italic;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+            <img src="sematco.jpg" alt="Logo" class="logo">
+
+        <h1 class="site-title"><center>SEMATCO</center> </h1><br><br>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+    <a href="Core Services.html">Our Core Services</a>
+    <ul class="dropdown-menu">
+        <li><a href="Technical.html">Technical Department</a></li>
+        <li><a href="Projects & Drilling.html">Projects & Drilling Department</a></li>
+        <li><a href="Laboratory.html">Laboratory Department</a></li>
+        <li><a href="Surveying.html">Surveying Department</a></li>
+
+    </ul>
+</li>
+        <li><a href="Clients.html">Clients</a></li>
+        <li><a href="Equipment.html">Equipments</a></li>
+        <li><a href="Location.html">Location</a></li>
+        <li class="contact-us"><a href="Contact us.html">Contact Us</a></li>
+        <li><a href="SEMATCO Job Application.html">Join Us</a></li>
+        
+        </ul>
+        </nav>
+    </header>
+
+ <h3 class="large-heading"><u><strong>Our Core Services</strong></u></h3>
+        <ul>
+            <li> 1. Soil Investigation and engineering material Testing.</li>
+            <li> 2. Civil Survey works.</li>
+            <li> 3. Environmental studies.</li>
+            <li> 4. Technical consulting works.</li>
+            <li> 5. Quality control works of engineering projects and villas.</li>
+            <li> 6. Water wells works.</li>
+            <li> 7. Pile Installation works.</li>
+            <li> 8. Soil investigation works in onshore and offshore.</li>
+            <li> 9. Wells for Sanitary Words.</li>
+            <li> 10. Drilling works of lamp-posts.</li>
+            <li> 11. All Kinds of drilling.</li>
+        </ul>
+    </span>
+
+</p>
+
+<h3><strong>SEMATCO’s Technical Expertise</strong></h3>
+    <p>
+        SEMATCO offers a comprehensive range of technical support services across the fields of 
+        construction, surveying, agriculture, and environmental studies. These services are tailored 
+        to meet the needs of project owners, design and consulting firms, and contractors.
+    </p>
+
+    <h3><strong>Our Service Departments</strong></h3>
+    <ul>
+        <li><strong>Technical Department</strong></li>
+        <li><strong>Projects & Drilling Department</strong></li>
+        <li><strong>Laboratory Department</strong></li>
+        <li><strong>Surveying Department</strong></li>
+    </ul>
+
+    <footer>
+
+        <p><strong>SEMATCO Co.</strong> | All Rights Reserved.</p>
+        <p>Tel: 24739466 – 24739465 -24739463</p>
+        <p>Address: Al-Rai , Block-1, Street-3, Plot-1760</p>
+        <p>Email: sematco@sematco.net</p>
+    </footer>    
+
+   
+</body>
+    </html>
